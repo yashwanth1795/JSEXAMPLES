@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+    <style>
+        #result {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h2>Simple Calculator</h2>                                                                                      
+    <input type="text" id="klu" placeholder="Enter expression">
+    <button onclick="calculate()">=</button>
+    <button onclick="clearDisplay()">Clear</button>
+
+    <h1 id="result"></h1>
+
+    <script>
+        function calculate() {
+            try {
+                const expr = document.getElementById('klu').value;
+                const output = eval(expr);
+                document.getElementById('result').textContent = output;
+            } catch {
+                document.getElementById('result').textContent = 'Error';
+            }
+        }
+
+        function clearDisplay() {
+            document.getElementById('klu').value = "";
+            document.getElementById('result').textContent = "";
+        }
+    </script>
+</body>
+</html>
